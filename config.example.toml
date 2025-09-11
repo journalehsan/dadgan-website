@@ -1,0 +1,34 @@
+# Persian Law Firm Website - Configuration Example
+# Copy this file to config.toml and modify as needed
+
+[server]
+port = 8081
+host = "127.0.0.1"
+environment = "development"
+
+[logging]
+level = "debug"
+format = "pretty"
+
+[database]
+# For future use
+# url = "postgresql://user:password@localhost/dadgan_db"
+# max_connections = 10
+
+[email]
+# For future use
+# smtp_host = "smtp.gmail.com"
+# smtp_port = 587
+# smtp_username = "your-email@gmail.com"
+# smtp_password = "your-app-password"
+
+[security]
+# For future use
+# secret_key = "your-secret-key-here"
+# jwt_secret = "your-jwt-secret-here"
+
+[external]
+# For future use
+# google_analytics_id = "GA-XXXXXXXXX"
+# recaptcha_site_key = "your-recaptcha-site-key"
+# recaptcha_secret_key = "your-recaptcha-secret-key"
