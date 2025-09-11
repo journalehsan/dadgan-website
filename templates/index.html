@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}موسسه حقوقی دادگان - تخصص در طلاق توافقی و مشاوره خانواده{% endblock %}
+
+{% block description %}موسسه حقوقی دادگان ارائه دهنده خدمات تخصصی طلاق توافقی، مشاوره حقوقی خانواده، وکیل طلاق توافقی، و مشاوره حقوقی آنلاین و حضوری در تهران{% endblock %}
+
+{% block extra_head %}
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "موسسه حقوقی دادگان",
+  "description": "موسسه حقوقی دادگان ارائه دهنده خدمات تخصصی طلاق توافقی، مشاوره حقوقی خانواده، وکیل طلاق توافقی، و مشاوره حقوقی آنلاین و حضوری در تهران",
+  "url": "https://dadgan.com",
+  "logo": "https://dadgan.com/static/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "خیابان جردن، خیابان جهان کودک، پلاک ۱۲۳",
+    "addressLocality": "تهران",
+    "addressCountry": "IR"
+  },
+  "telephone": "021-88877897",
+  "email": "info@dadgan.com",
+  "serviceArea": {
+    "@type": "Country",
+    "name": "ایران"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "خدمات حقوقی خانواده",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "طلاق توافقی",
+          "description": "انجام کلیه امور مربوط به طلاق توافقی با بهترین شرایط و در کوتاه ترین زمان ممکن"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "مشاوره حقوقی خانواده",
+          "description": "مشاوره تخصصی در تمامی زمینه های حقوق خانواده شامل مهریه، نفقه، حضانت فرزند"
+        }
+      }
+    ]
+  }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+{% include "partials/hero.html" %}
+
+<!-- Services Section -->
+{% include "partials/services.html" %}
+
+<!-- About Section -->
+{% include "partials/about.html" %}
+
+<!-- Pricing Section -->
+{% include "partials/pricing.html" %}
+
+<!-- FAQ Section -->
+{% include "partials/faq.html" %}
+
+<!-- Contact Section -->
+{% include "partials/contact.html" %}
+{% endblock %}

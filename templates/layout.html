@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}موسسه حقوقی دادگان - تخصص در طلاق توافقی و مشاوره خانواده{% endblock %}</title>
+    <meta name="description" content="{% block description %}موسسه حقوقی دادگان ارائه دهنده خدمات تخصصی طلاق توافقی، مشاوره حقوقی خانواده، وکیل طلاق توافقی، و مشاوره حقوقی آنلاین و حضوری در تهران{% endblock %}">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{% block og_title %}{% block title %}موسسه حقوقی دادگان - تخصص در طلاق توافقی و مشاوره خانواده{% endblock %}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{% block description %}موسسه حقوقی دادگان ارائه دهنده خدمات تخصصی طلاق توافقی، مشاوره حقوقی خانواده، وکیل طلاق توافقی، و مشاوره حقوقی آنلاین و حضوری در تهران{% endblock %}{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dadgan.com">
+    <meta property="og:locale" content="fa_IR">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}{% block title %}موسسه حقوقی دادگان - تخصص در طلاق توافقی و مشاوره خانواده{% endblock %}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{% block description %}موسسه حقوقی دادگان ارائه دهنده خدمات تخصصی طلاق توافقی، مشاوره حقوقی خانواده، وکیل طلاق توافقی، و مشاوره حقوقی آنلاین و حضوری در تهران{% endblock %}{% endblock %}">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{% block canonical_url %}https://dadgan.com{% endblock %}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://v1.fontapi.ir/css/Vazir" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Vazir', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: Vazir, sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        .shadow-custom {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .floating { 
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, 15px); }
+            100% { transform: translate(0, -0px); } 
+        }
+    </style>
+    
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    {% include "partials/header.html" %}
+    
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <!-- Footer -->
+    {% include "partials/footer.html" %}
+    
+    <!-- Common JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('ion-icon');
+                
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.setAttribute('name', 'chevron-up-outline');
+                } else {
+                    content.classList.add('hidden');
+                    icon.setAttribute('name', 'chevron-down-outline');
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
